@@ -44,7 +44,7 @@ const Navbar = () => {
           to="/" 
           className="text-xl font-display tracking-tight text-white hover:opacity-80 transition-opacity"
         >
-          <span className="text-gradient-accent">Gus</span><span className="text-white">.Dev</span>
+          <span className="text-gradient-accent">Vitor Negromonte</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ const Navbar = () => {
                 "link-underline text-sm font-medium transition-colors",
                 location.pathname === link.path 
                   ? "text-accent" 
-                  : "text-muted-foreground hover:text-white"
+                  : "text-muted-foreground hover:text-gradient-accent"
               )}
             >
               {link.name}
@@ -67,7 +67,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-white"
+          className="md:hidden text-accent"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,7 +86,7 @@ const Navbar = () => {
                   "px-4 py-2 text-sm font-medium rounded transition-colors",
                   location.pathname === link.path 
                     ? "bg-accent/20 text-accent" 
-                    : "text-muted-foreground hover:bg-white/5 hover:text-white"
+                    : "text-muted-foreground hover:text-gradient-accent"
                 )}
               >
                 {link.name}

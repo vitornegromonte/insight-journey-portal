@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/ProjectsData";
+import Footer from "@/components/Footer";
 
 const Projects = () => {
   const [filter, setFilter] = useState<string | null>(null);
@@ -65,7 +66,9 @@ const Projects = () => {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
+    
   );
 };
 

@@ -2,16 +2,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Github, Mail, FileText, Linkedin, Instagram } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
     <div className="bg-white min-h-screen">
+      <Navbar />
       <main className="container mx-auto px-4 py-20 flex flex-col items-center min-h-[calc(100vh-200px)] justify-center">
         <div className="text-center max-w-3xl mx-auto">
           <div className="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-2 border-gray-200 mb-8">
             <img 
-              src="/lovable-uploads/9e80a38e-aedb-4ff2-9fa3-8ee882cf2a37.png" 
+              src="vnco.JPG" 
               alt="Profile" 
               className="w-full h-full object-cover"
             />

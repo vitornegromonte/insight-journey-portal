@@ -42,13 +42,12 @@ const About = () => {
 
   return (
     <div className="bg-dark min-h-screen">
-      <Navbar />
       
       {/* Header */}
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto text-center">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">About Me</span>
-          <h1 className="text-gradient font-display mb-6">The Story So Far</h1>
+          <h1 className="font-display mb-6">The Story So Far</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Get to know my background, skills, and the journey that led me to become a data scientist
             specializing in the intersection of machine learning and creative applications.
@@ -60,12 +59,12 @@ const About = () => {
       <section ref={bioRef} className="py-16 section-fade-in">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/3">
+          <div className="md:w-1/3">
               <div className="relative">
                 <div className="aspect-square w-full max-w-md rounded-xl overflow-hidden border border-accent/20">
                   <img 
                     src="/lovable-uploads/ea0e9c56-b5f9-4957-992b-0a1060c1020e.png" 
-                    alt="Gus" 
+                    alt="Vitor" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -77,15 +76,19 @@ const About = () => {
             <div className="md:w-2/3">
               <h2 className="text-3xl font-display mb-6">My Journey</h2>
               <p className="text-muted-foreground mb-4">
-                I'm a PhD candidate and researcher in artificial intelligence with a focus on machine learning applications
-                for creative computing. My academic journey began with a Bachelor's in Computer Science and Mathematics,
-                followed by a Master's in Data Science where I first explored the potential of AI for artistic expression.
+              Undergraduate Statistics student at the Federal University of Pernambuco (UFPE), with a focus on machine learning and model optimization. During my studies, I served as a teaching assistant in two courses: Computational Creativity and Introduction to Deep Learning, working with professors Filipe Calegario and Tsang Ing Ren , respectively.
               </p>
               <p className="text-muted-foreground mb-4">
-                Currently, I'm researching how neural networks can be used as creative tools, developing new algorithms
-                that help bridge the gap between human creativity and machine intelligence. My work has been featured in 
-                several academic conferences and art exhibitions, exploring the boundaries of what's possible when humans
-                and AI collaborate.
+                In my sophomore year, I joined the National Institute of Software Engineering as a junior researcher, conducting research in Human-Computer Interaction within the Smart Cities and Internet of Things research group, under the guidance of professor Kiev Gama and co-advised by Ana Paula Chaves from Northern Arizona University and Danilo Ribeiro from Cesar School . During this time, we got a paper accepted in the 2024’s edition of the Brazilian Symposium on Human Factors in Computing Systems (IHC 2024) and in the 2025's edition of the Brazilian Symposium on Informations Systems (SBSI 2025), both promoted by the Brazilian Computer Society (SBC) , the main scientific event in the field of Human-Computer Interaction in Brazil.
+              </p>
+              <p className="text-muted-foreground mb-4">
+              I am a co-founder and researcher at the Geraia research group, working with professors Filipe Calegario, Giordano Cabral and André Neves . At Geraia, I am currently conducting research in Generative AI, focusing on the evaluation and optimization of Language Models (LLMs) in Portuguese and probabilistic-based retrieval algorithms for high-dimensional data.
+              </p>
+              <p className="text-muted-foreground mb-4">
+              I also co-founded the Artificial Intelligence League of the Federal University of Pernambuco, also known as LIGIA, which is linked to the CIn.AI group, a pioneering AI research group in Brazil founded in the 1970s. As Outreach Director of LIGIA, my main responsibilities include forming partnerships with other groups, companies, and governmental organizations, organizing events to showcase the use of AI in various fields (such as finance, healthcare, and more), and preparing educational materials to teach AI to the broader community. Since the league it’s linked to the Federal University of Pernambuco, we had several professors in our board, such as George DC Cavalcanti, Adiel Filho, Tsang Ing Ren.
+              </p>
+              <p className="text-muted-foreground mb-4">
+              During this time, I also co-founded a start-up called redduo.ai and served as Chief Data Officer/co-Chief Technology Officer, but left before the first year of its founding.
               </p>
               <p className="text-muted-foreground">
                 Beyond my research, I'm passionate about making machine learning more accessible and interpretable. I 
@@ -108,39 +111,17 @@ const About = () => {
               <div className="space-y-8">
                 <div className="glass-morphism p-6 rounded-xl">
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-medium">PhD in Computer Science</h4>
-                    <span className="text-accent">2021 - Present</span>
+                    <h4 className="text-xl font-medium">B.Sc. in Statistics</h4>
+                    <span className="text-accent">2022 - Present</span>
                   </div>
-                  <p className="text-muted-foreground mb-2">University of Technology</p>
+                  <p className="text-muted-foreground mb-2">Federal University of Pernambuco</p>
                   <p className="text-sm text-muted-foreground">
                     Researching novel applications of deep learning for creative computing and generative art.
                     Thesis focused on developing interpretable neural network architectures for artistic expression.
                   </p>
                 </div>
                 
-                <div className="glass-morphism p-6 rounded-xl">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-medium">MSc in Data Science</h4>
-                    <span className="text-accent">2019 - 2021</span>
-                  </div>
-                  <p className="text-muted-foreground mb-2">University of Innovation</p>
-                  <p className="text-sm text-muted-foreground">
-                    Specialized in machine learning and neural networks. Master's thesis on "Generative Adversarial Networks
-                    for Creative Image Synthesis" received departmental honors.
-                  </p>
-                </div>
-                
-                <div className="glass-morphism p-6 rounded-xl">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-medium">BSc in Computer Science & Mathematics</h4>
-                    <span className="text-accent">2015 - 2019</span>
-                  </div>
-                  <p className="text-muted-foreground mb-2">State University</p>
-                  <p className="text-sm text-muted-foreground">
-                    Double major with focus on algorithms, computational theory, and statistical analysis.
-                    Graduated with highest honors.
-                  </p>
-                </div>
+    
               </div>
             </div>
             
@@ -152,39 +133,64 @@ const About = () => {
               <div className="space-y-8">
                 <div className="glass-morphism p-6 rounded-xl">
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-medium">Research Assistant</h4>
-                    <span className="text-accent">2021 - Present</span>
+                    <h4 className="text-xl font-medium">Co-founder and Outreach Director</h4>
+                    <span className="text-accent">2024 - Present</span>
                   </div>
-                  <p className="text-muted-foreground mb-2">AI Research Lab, University of Technology</p>
+                  <p className="text-muted-foreground mb-2">Ligia</p>
                   <p className="text-sm text-muted-foreground">
-                    Conducting research on deep learning models for creative applications. Contributing to open-source
-                    machine learning libraries and publishing findings in top AI conferences.
+                  Ligia is an AI club/extracurricular project at the Federal University of Pernambuco, affiliated with the pioneering CIn.AI research group. As Outreach Director, I focus on building partnerships, organizing AI-focused events, and developing educational materials to promote AI across various fields.
+                  </p>
+                </div>
+
+                <div className="glass-morphism p-6 rounded-xl">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-xl font-medium">Researcher </h4>
+                    <span className="text-accent">2023 - Present</span>
+                  </div>
+                  <p className="text-muted-foreground mb-2">Geraia, Federal University of Pernambuco</p>
+                  <p className="text-sm text-muted-foreground">
+                  Conducting research in Generative AI, focusing on evaluating Language Models in Portuguese for performance, scalability, and adaptability in emergent languages. Investigating energy-efficient AI for sustainable training and inference, optimizing generative models for deployment on low-resource devices.                  </p>
+                </div>
+                
+                <div className="glass-morphism p-6 rounded-xl">
+                <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-xl font-medium">Teaching Assistant</h4>
+                    <span className="text-accent">2023 - Present</span>
+                  </div>
+                  <p className="text-muted-foreground mb-2">Federal University of Pernambuco</p>
+                  <div className="text-sm text-muted-foreground">
+                    <ul className="list-disc pl-5 space-y-1">
+                    <li>Introduction to Deep Learning - Teaching core topics in Deep Learning, including Recurrent Neural Networks (RNNs), Convolutional Neural Networks (CNNs),
+                    and Transformer Architecture.</li>
+                      <li>Computational Creativity - Exploring the use of Generative AI tools for creative applications, covering topics such as Diffusion Models and Large Language
+                      Models (LLMs).</li>
+                    </ul>
+                  </div>
+                </div>
+
+                
+                <div className="glass-morphism p-6 rounded-xl">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-xl font-medium">Co-founder and Data Scientist</h4>
+                    <span className="text-accent">2023 - 2024</span>
+                  </div>
+                  <p className="text-muted-foreground mb-2">redduo.ai</p>
+                  <p className="text-sm text-muted-foreground">
+                  Worked as a Data Scientist, conducting data analysis to support business intelligence initiatives and developing software automations. Additionally served as an AI Scientist, contributing to the development of core AI models with a focus on optimization and performance enhancement.
                   </p>
                 </div>
                 
                 <div className="glass-morphism p-6 rounded-xl">
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-medium">Data Science Intern</h4>
-                    <span className="text-accent">2020 - 2021</span>
+                    <h4 className="text-xl font-medium">National Institute of Software Engineering (INES)</h4>
+                    <span className="text-accent">2023 - 2024</span>
                   </div>
-                  <p className="text-muted-foreground mb-2">Tech Innovations Inc.</p>
+                  <p className="text-muted-foreground mb-2">redduo.ai</p>
                   <p className="text-sm text-muted-foreground">
-                    Developed machine learning models for pattern recognition and anomaly detection.
-                    Implemented data pipelines for real-time analytics on large-scale datasets.
+                  While working at the Brazilian Ministry of Science and Technology - National Institute of Software Engineering I have assisted in developing quantitative tools for analysis and enhancing accessibility techniques for apps designed to support adults on the autism spectrum.
                   </p>
                 </div>
-                
-                <div className="glass-morphism p-6 rounded-xl">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-medium">Software Developer</h4>
-                    <span className="text-accent">2018 - 2019</span>
-                  </div>
-                  <p className="text-muted-foreground mb-2">WebTech Solutions</p>
-                  <p className="text-sm text-muted-foreground">
-                    Developed full-stack web applications with focus on data visualization and interactive dashboards.
-                    Created custom analytics tools for business intelligence applications.
-                  </p>
-                </div>
+
               </div>
             </div>
           </div>
@@ -266,7 +272,7 @@ const About = () => {
                       {[...Array(5)].map((_, i) => (
                         <div 
                           key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 4 ? 'bg-accent' : 'bg-white/20'}`}
+                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
                         ></div>
                       ))}
                     </div>
@@ -280,7 +286,7 @@ const About = () => {
                       {[...Array(5)].map((_, i) => (
                         <div 
                           key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 4 ? 'bg-accent' : 'bg-white/20'}`}
+                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
                         ></div>
                       ))}
                     </div>
@@ -289,7 +295,7 @@ const About = () => {
                 
                 <div className="glass-morphism p-4 rounded-lg">
                   <div className="flex justify-between items-center">
-                    <span>JavaScript</span>
+                    <span>LaTeX</span>
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <div 
@@ -301,33 +307,7 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span>C++</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="glass-morphism p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span>Java</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+            
               </div>
             </div>
             
@@ -406,7 +386,7 @@ const About = () => {
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <span>Generative Adversarial Networks (GANs)</span>
+                    <span> Bio-inspired computing</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent"></div>
@@ -418,15 +398,15 @@ const About = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <span>Explainable AI & Model Interpretability</span>
+                    <span>Spiking Neural Networks</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <span>Human-AI Collaboration</span>
+                    <span>Energy-based models</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <span>Neural Style Transfer</span>
+                    <span>Natural Language Processing</span>
                   </li>
                 </ul>
               </div>

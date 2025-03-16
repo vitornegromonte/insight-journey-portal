@@ -10,7 +10,7 @@ const Sidebar = () => {
     { name: "Home", path: "/", icon: <Home size={20} /> },
     { name: "About", path: "/about", icon: <User size={20} /> },
     { name: "Projects", path: "/projects", icon: <Layers size={20} /> },
-    { name: "Papers", path: "/papers", icon: <FileText size={20} /> },
+    { name: "Papers & Talks", path: "/papers", icon: <FileText size={20} /> },
     { name: "Art", path: "/art", icon: <Paintbrush size={20} /> },
     { name: "Contact", path: "/contact", icon: <Mail size={20} /> },
   ];
@@ -18,12 +18,12 @@ const Sidebar = () => {
   return (
     <aside className="fixed left-0 top-0 bottom-0 w-16 md:w-60 bg-white border-r border-gray-200 z-50 transition-all duration-300">
       <div className="flex flex-col h-full py-8 overflow-hidden">
-        <div className="px-4 mb-8 flex justify-center md:justify-start">
-          <Link to="/" className="font-display text-xl tracking-tight">
-            <span className="text-accent">Vitor</span>
-            <span className="text-gray-800 hidden md:inline">.Dev</span>
-          </Link>
-        </div>
+      <div className="px-4 mb-8 flex justify-center md:justify-start">
+        <Link to="/" className="font-display text-xl tracking-tight">
+          <span className="text-accent">Vitor</span>
+          <span className="text-gray-800 hidden md:block block">Negromonte</span>
+        </Link>
+      </div>
         
         <nav className="flex-1 px-2">
           <ul className="space-y-2">
@@ -49,7 +49,7 @@ const Sidebar = () => {
         
         <div className="px-4 pt-4 border-t border-gray-200 hidden md:block">
           <div className="text-xs text-gray-600">
-            <p>© 2023 Vitor Negromonte</p>
+            <p>© 2025 Vitor Negromonte</p>
             <p>Data Scientist & AI Researcher</p>
           </div>
         </div>
