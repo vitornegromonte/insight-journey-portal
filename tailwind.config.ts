@@ -68,17 +68,23 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         // Custom colors for the portfolio
-        dark: "#0F0F0F",
-        "dark-accent": "#1A1A1A",
-        purple: {
-          light: "#9F7AEA",
-          DEFAULT: "#805AD5",
-          dark: "#6B46C1"
+        dark: "#FFFFFF",
+        "dark-accent": "#F5F5F5",
+        red: {
+          light: "#E45F59",
+          DEFAULT: "#C12823",
+          dark: "#9E1F1B"
         },
-        blue: {
-          light: "#90CDF4",
-          DEFAULT: "#4299E1",
-          dark: "#3182CE"
+        gray: {
+          100: "#F5F5F5",
+          200: "#EEEEEE",
+          300: "#E0E0E0",
+          400: "#BDBDBD",
+          500: "#9E9E9E",
+          600: "#757575",
+          700: "#616161",
+          800: "#424242",
+          900: "#212121"
         }
       },
       fontFamily: {

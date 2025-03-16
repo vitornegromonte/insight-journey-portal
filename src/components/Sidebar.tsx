@@ -16,12 +16,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 bottom-0 w-16 md:w-60 bg-black/30 border-r border-white/10 backdrop-blur-lg z-50 transition-all duration-300">
+    <aside className="fixed left-0 top-0 bottom-0 w-16 md:w-60 bg-white/90 border-r border-gray-200 backdrop-blur-lg z-50 transition-all duration-300">
       <div className="flex flex-col h-full py-8 overflow-hidden">
         <div className="px-4 mb-8 flex justify-center md:justify-start">
           <Link to="/" className="font-display text-xl tracking-tight">
             <span className="text-gradient-accent">Gus</span>
-            <span className="text-white hidden md:inline">.Dev</span>
+            <span className="text-gray-800 hidden md:inline">.Dev</span>
           </Link>
         </div>
         
@@ -33,10 +33,10 @@ const Sidebar = () => {
                   to={link.path}
                   className={cn(
                     "flex items-center py-2 px-3 rounded-md transition-colors",
-                    "hover:bg-white/10 group",
+                    "hover:bg-gray-100 group",
                     location.pathname === link.path 
-                      ? "bg-accent/20 text-accent" 
-                      : "text-muted-foreground"
+                      ? "bg-accent/10 text-accent" 
+                      : "text-gray-700"
                   )}
                 >
                   <span className="mr-3">{link.icon}</span>
@@ -47,8 +47,8 @@ const Sidebar = () => {
           </ul>
         </nav>
         
-        <div className="px-4 pt-4 border-t border-white/10 hidden md:block">
-          <div className="text-xs text-muted-foreground">
+        <div className="px-4 pt-4 border-t border-gray-200 hidden md:block">
+          <div className="text-xs text-gray-600">
             <p>© 2023 Gus Anderson</p>
             <p>PhD Candidate, AI Research</p>
           </div>
