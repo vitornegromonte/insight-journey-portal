@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import Sidebar from "@/components/Sidebar";
 import { 
   Form,
   FormControl,
@@ -57,12 +58,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
-      <main className="p-8">
+    <div className="bg-dark min-h-screen">
+      <Sidebar />
+      
+      <main className="ml-16 md:ml-60 p-8">
         <div className="pt-8 pb-16">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Get In Touch</span>
-          <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Contact Me</h1>
-          <p className="text-gray-600 max-w-2xl">
+          <h1 className="text-gradient font-display text-3xl md:text-4xl mb-4">Contact Me</h1>
+          <p className="text-muted-foreground max-w-2xl">
             Feel free to reach out for collaborations, research opportunities, or just to say hello!
           </p>
         </div>
@@ -140,35 +143,36 @@ const Contact = () => {
             </Form>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <div className="glass-morphism p-8 rounded-xl">
             <h2 className="text-xl font-display mb-6">Contact Information</h2>
             
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-medium uppercase text-accent mb-2">Email</h3>
-                <p className="text-gray-600">contact@vitornegromonte.dev</p>
+                <p className="text-muted-foreground">contact@gusanderson.dev</p>
               </div>
               
               <div>
                 <h3 className="text-sm font-medium uppercase text-accent mb-2">University</h3>
-                <p className="text-gray-600">Department of Computer Science</p>
-                <p className="text-gray-600">Federal University of Pernambuco</p>
-                <p className="text-gray-600">Recife, Brazil</p>
+                <p className="text-muted-foreground">Department of Computer Science</p>
+                <p className="text-muted-foreground">University of Technology</p>
+                <p className="text-muted-foreground">1234 University Ave.</p>
+                <p className="text-muted-foreground">City, State 12345</p>
               </div>
               
               <div>
                 <h3 className="text-sm font-medium uppercase text-accent mb-2">Social Media</h3>
                 <div className="flex space-x-4 mt-2">
-                  <a href="#" className="text-gray-600 hover:text-accent transition-colors">Twitter</a>
-                  <a href="#" className="text-gray-600 hover:text-accent transition-colors">LinkedIn</a>
-                  <a href="#" className="text-gray-600 hover:text-accent transition-colors">GitHub</a>
+                  <a href="#" className="text-muted-foreground hover:text-accent transition-colors">Twitter</a>
+                  <a href="#" className="text-muted-foreground hover:text-accent transition-colors">LinkedIn</a>
+                  <a href="#" className="text-muted-foreground hover:text-accent transition-colors">GitHub</a>
                 </div>
               </div>
               
               <div>
                 <h3 className="text-sm font-medium uppercase text-accent mb-2">Office Hours</h3>
-                <p className="text-gray-600">Tuesday & Thursday: 2:00 PM - 4:00 PM</p>
-                <p className="text-gray-600">Or by appointment</p>
+                <p className="text-muted-foreground">Tuesday & Thursday: 2:00 PM - 4:00 PM</p>
+                <p className="text-muted-foreground">Or by appointment</p>
               </div>
             </div>
           </div>

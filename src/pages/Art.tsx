@@ -1,7 +1,9 @@
+
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import Sidebar from "@/components/Sidebar";
 import ArtCard from "@/components/ArtCard";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Art = () => {
   const [selectedArt, setSelectedArt] = useState<null | {
@@ -106,12 +108,14 @@ const Art = () => {
     : artworks.filter(art => art.category === filter);
 
   return (
-    <div className="bg-white min-h-screen">
-      <main className="p-8">
+    <div className="bg-dark min-h-screen">
+      <Sidebar />
+      
+      <main className="ml-16 md:ml-60 p-8">
         <div className="pt-8 pb-16">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Portfolio</span>
-          <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">AI Art Gallery</h1>
-          <p className="text-gray-600 max-w-2xl">
+          <h1 className="text-gradient font-display text-3xl md:text-4xl mb-4">AI Art Gallery</h1>
+          <p className="text-muted-foreground max-w-2xl">
             Exploring the intersection of artificial intelligence and artistic expression
             through generative algorithms and creative coding.
           </p>
@@ -119,7 +123,7 @@ const Art = () => {
         
         <Tabs defaultValue="all" className="w-full">
           <div className="mb-8">
-            <TabsList className="bg-gray-100 p-1">
+            <TabsList className="glass-morphism p-1">
               {categories.map(category => (
                 <TabsTrigger 
                   key={category.id} 
@@ -151,7 +155,7 @@ const Art = () => {
       </main>
       
       <Dialog open={!!selectedArt} onOpenChange={(open) => !open && setSelectedArt(null)}>
-        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-3xl">
+        <DialogContent className="bg-black/90 border-white/10 text-white max-w-3xl">
           {selectedArt && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="aspect-square overflow-hidden rounded-md">
@@ -163,12 +167,12 @@ const Art = () => {
               </div>
               <div>
                 <h3 className="text-xl font-display mb-2">{selectedArt.title}</h3>
-                <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
+                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
                   <span>{selectedArt.technique}</span>
-                  <span className="text-gray-300">•</span>
+                  <span className="text-muted-foreground/50">•</span>
                   <span>{selectedArt.year}</span>
                 </div>
-                <p className="text-gray-600">{selectedArt.description}</p>
+                <p className="text-muted-foreground">{selectedArt.description}</p>
               </div>
             </div>
           )}

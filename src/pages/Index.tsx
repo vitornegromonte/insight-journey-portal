@@ -1,51 +1,56 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Github, Mail, FileText, Linkedin, Instagram } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ArrowRight } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-dark min-h-screen">
+      <Navbar />
+      
       <main className="container mx-auto px-4 py-20 flex flex-col items-center min-h-[calc(100vh-200px)] justify-center">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-2 border-gray-200 mb-8">
+          <div className="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-full overflow-hidden border-2 border-accent mb-8">
             <img 
-              src="/lovable-uploads/9e80a38e-aedb-4ff2-9fa3-8ee882cf2a37.png" 
+              src="/lovable-uploads/ea0e9c56-b5f9-4957-992b-0a1060c1020e.png" 
               alt="Profile" 
               className="w-full h-full object-cover"
             />
           </div>
           
-          <h1 className="text-gray-900 font-display text-4xl md:text-5xl mb-4">
-            Vitor Negromonte
+          <h1 className="text-gradient-accent font-display text-4xl md:text-5xl mb-4">
+            Gus Anderson
           </h1>
           
-          <p className="text-gray-700 text-lg mb-2 max-w-2xl mx-auto leading-relaxed">
-            Data Scientist and AI Researcher. Currently, conducting research in <span className="font-semibold">Generative AI</span>, working on the 
-            evaluation and optimization of <span className="font-semibold">Language Models (LLMs)</span> in Portuguese and <span className="font-semibold">probabilistic-based
-            retrieval algorithms</span> for high-dimensional data.
+          <h2 className="text-white/80 text-xl md:text-2xl mb-6">
+            Data Scientist & AI Researcher
+          </h2>
+          
+          <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+            I'm a PhD candidate specializing in machine learning and AI-driven art. 
+            My research explores the intersection of computational creativity and 
+            generative systems, with a focus on neural networks that can produce 
+            visually compelling and meaningful outputs.
           </p>
           
-          <div className="flex justify-center gap-6 mt-8">
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
-              <FileText size={24} />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
-              <Mail size={24} />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
-              <Github size={24} />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
-              <Linkedin size={24} />
-            </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
-              <Instagram size={24} />
-            </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/about">
+              <Button size="lg" className="gap-2">
+                About Me <ArrowRight size={16} />
+              </Button>
+            </Link>
+            <Link to="/projects">
+              <Button variant="outline" size="lg" className="gap-2">
+                View Projects <ArrowRight size={16} />
+              </Button>
+            </Link>
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
