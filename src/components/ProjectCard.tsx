@@ -30,7 +30,7 @@ const ProjectCard = ({
   return (
     <Card 
       className={cn(
-        "overflow-hidden hover-card bg-black/40 border border-white/10",
+        "overflow-hidden hover-card border border-gray-200 bg-white",
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -45,12 +45,12 @@ const ProjectCard = ({
             isHovered ? "scale-110" : "scale-100"
           )}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         
         <div className="absolute bottom-0 left-0 p-4 w-full">
           <div className="flex flex-wrap gap-2 mb-2">
             {tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="bg-black/50 text-xs">
+              <Badge key={tag} variant="secondary" className="bg-black/50 text-white text-xs">
                 {tag}
               </Badge>
             ))}
@@ -59,8 +59,8 @@ const ProjectCard = ({
       </div>
       
       <div className="p-5">
-        <h3 className="text-xl font-display mb-2">{title}</h3>
-        <p className="text-muted-foreground text-sm mb-4">{description}</p>
+        <h3 className="text-xl font-display mb-2 text-gray-900">{title}</h3>
+        <p className="text-gray-600 text-sm mb-4">{description}</p>
         
         <div className="flex gap-3 mt-auto">
           {githubUrl && (
@@ -76,7 +76,7 @@ const ProjectCard = ({
             <Button size="sm" asChild className="gap-2">
               <a href={liveUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={16} />
-                <span>View Project</span>
+                <span>Demo</span>
               </a>
             </Button>
           )}
