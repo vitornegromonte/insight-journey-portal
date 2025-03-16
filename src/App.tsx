@@ -12,6 +12,7 @@ import Art from "./pages/Art";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
 
 const queryClient = new QueryClient();
 
@@ -22,8 +23,9 @@ const Layout = ({ children }) => {
   
   return (
     <>
+      <Topbar />
       {!isHome && <Sidebar />}
-      <main className={!isHome ? "pl-16 md:pl-60" : ""}>
+      <main className={!isHome ? "pl-16 md:pl-60 pt-16" : "pt-16"}>
         {children}
       </main>
     </>
@@ -37,7 +39,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Layout><Index /></Layout>} />
           <Route path="/about" element={<Layout><About /></Layout>} />
           <Route path="/projects" element={<Layout><Projects /></Layout>} />
           <Route path="/papers" element={<Layout><Papers /></Layout>} />
