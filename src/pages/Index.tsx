@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const Index = () => {
   return (
     <div className="bg-white min-h-screen">
-      <main className="container mx-auto px-4 py-24 flex flex-col items-center min-h-[calc(100vh-200px)] justify-center">
+      <main className="container mx-auto px-4 py-20 flex flex-col items-center min-h-[calc(100vh-200px)] justify-center">
         <div className="text-center max-w-3xl mx-auto">
           <div className="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-2 border-gray-200 mb-8">
             <img 
