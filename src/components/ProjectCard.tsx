@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ProjectCardProps {
   title: string;
@@ -37,14 +38,14 @@ const ProjectCard = ({
     <>
       <Card 
         className={cn(
-          "overflow-hidden hover-card border border-gray-200 bg-white cursor-pointer",
+          "overflow-hidden hover-card border border-gray-200 bg-white cursor-pointer h-[360px]",
           className
         )}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsOpen(true)}
       >
-        <div className="relative overflow-hidden aspect-video">
+        <div className="relative overflow-hidden h-[160px]">
           <img
             src={image}
             alt={title}
@@ -66,9 +67,9 @@ const ProjectCard = ({
           </div>
         </div>
         
-        <div className="p-5">
+        <div className="p-5 flex flex-col h-[200px]">
           <h3 className="text-xl font-display mb-2 text-gray-900">{title}</h3>
-          <p className="text-gray-600 text-sm mb-4">{description}</p>
+          <p className="text-gray-600 text-sm mb-4 line-clamp-3">{description}</p>
           
           <div className="flex gap-3 mt-auto">
             {githubUrl && (
@@ -93,68 +94,70 @@ const ProjectCard = ({
       </Card>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden">
-          <div className="aspect-video w-full">
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="p-6">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-display">{title}</DialogTitle>
-              <DialogDescription className="text-base text-gray-700 mt-2">
-                {detailedDescription || description}
-              </DialogDescription>
-            </DialogHeader>
-            
-            <div className="mt-6 space-y-4">
-              {categories && categories.length > 0 && (
+        <DialogContent className="max-w-4xl p-0 overflow-hidden max-h-[90vh]">
+          <ScrollArea className="max-h-[90vh]">
+            <div className="aspect-video w-full h-[320px]">
+              <img 
+                src={image} 
+                alt={title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-6">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-display">{title}</DialogTitle>
+                <DialogDescription className="text-base text-gray-700 mt-2">
+                  {detailedDescription || description}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="mt-6 space-y-4">
+                {categories && categories.length > 0 && (
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-500 mb-2">Categories</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {categories.map((category) => (
+                        <Badge key={category} className="bg-accent/10 text-accent hover:bg-accent/20 border-accent/20">
+                          {category}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
                 <div>
-                  <h4 className="text-sm font-medium text-gray-500 mb-2">Categories</h4>
+                  <h4 className="text-sm font-medium text-gray-500 mb-2">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
-                    {categories.map((category) => (
-                      <Badge key={category} className="bg-accent/10 text-accent hover:bg-accent/20 border-accent/20">
-                        {category}
+                    {tags.map((tag) => (
+                      <Badge key={tag} variant="outline" className="bg-gray-50">
+                        {tag}
                       </Badge>
                     ))}
                   </div>
                 </div>
-              )}
-              
-              <div>
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Technologies</h4>
-                <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="bg-gray-50">
-                      {tag}
-                    </Badge>
-                  ))}
+                
+                <div className="flex gap-3 pt-4">
+                  {githubUrl && (
+                    <Button variant="outline" asChild className="gap-2">
+                      <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github size={16} />
+                        <span>View Code</span>
+                      </a>
+                    </Button>
+                  )}
+                  
+                  {liveUrl && (
+                    <Button asChild className="gap-2">
+                      <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={16} />
+                        <span>View Demo</span>
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
-              
-              <div className="flex gap-3 pt-4">
-                {githubUrl && (
-                  <Button variant="outline" asChild className="gap-2">
-                    <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github size={16} />
-                      <span>View Code</span>
-                    </a>
-                  </Button>
-                )}
-                
-                {liveUrl && (
-                  <Button asChild className="gap-2">
-                    <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={16} />
-                      <span>View Demo</span>
-                    </a>
-                  </Button>
-                )}
-              </div>
             </div>
-          </div>
+          </ScrollArea>
         </DialogContent>
       </Dialog>
     </>
