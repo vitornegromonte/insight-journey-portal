@@ -3,10 +3,17 @@ import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/ProjectsData";
 import Footer from "@/components/Footer";
+import { 
+  Collapsible, 
+  CollapsibleContent, 
+  CollapsibleTrigger 
+} from "@/components/ui/collapsible";
+import { ChevronDown, ChevronUp, Filter } from "lucide-react";
 
 const Projects = () => {
   const [tagFilter, setTagFilter] = useState<string | null>(null);
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   
   // Extract unique tags and categories from all projects
   const allTags = [...new Set(projects.flatMap(project => project.tags))];
@@ -31,33 +38,6 @@ const Projects = () => {
         </div>
         
         <div className="space-y-6 mb-8">
-          {/* Technologies filter */}
-          <div>
-            <h3 className="text-sm font-medium text-gray-700 mb-3">Filter by Technology</h3>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setTagFilter(null)}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                  tagFilter === null ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                All Technologies
-              </button>
-              
-              {allTags.map(tag => (
-                <button
-                  key={tag}
-                  onClick={() => setTagFilter(tag)}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    tagFilter === tag ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          </div>
-          
           {/* Categories filter */}
           <div>
             <h3 className="text-sm font-medium text-gray-700 mb-3">Filter by Category</h3>
@@ -84,6 +64,47 @@ const Projects = () => {
               ))}
             </div>
           </div>
+          
+          {/* Technologies filter - now in a collapsible */}
+          <Collapsible 
+            open={isFiltersOpen} 
+            onOpenChange={setIsFiltersOpen}
+            className="border border-gray-200 rounded-lg p-4"
+          >
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-medium text-gray-700">Filter by Technology</h3>
+              <CollapsibleTrigger className="flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/70 transition-colors">
+                <Filter size={16} />
+                <span>More Filters</span>
+                {isFiltersOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              </CollapsibleTrigger>
+            </div>
+            
+            <CollapsibleContent className="mt-4">
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setTagFilter(null)}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                    tagFilter === null ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  All Technologies
+                </button>
+                
+                {allTags.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => setTagFilter(tag)}
+                    className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                      tagFilter === tag ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
