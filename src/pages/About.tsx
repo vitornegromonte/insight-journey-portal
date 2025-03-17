@@ -1,8 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const About = () => {
@@ -79,13 +77,13 @@ const About = () => {
               Undergraduate Statistics student at the Federal University of Pernambuco (UFPE), with a focus on machine learning and model optimization. During my studies, I served as a teaching assistant in two courses: Computational Creativity and Introduction to Deep Learning, working with professors Filipe Calegario and Tsang Ing Ren , respectively.
               </p>
               <p className="text-muted-foreground mb-4">
-                In my sophomore year, I joined the National Institute of Software Engineering as a junior researcher, conducting research in Human-Computer Interaction within the Smart Cities and Internet of Things research group, under the guidance of professor Kiev Gama and co-advised by Ana Paula Chaves from Northern Arizona University and Danilo Ribeiro from Cesar School . During this time, we got a paper accepted in the 2024’s edition of the Brazilian Symposium on Human Factors in Computing Systems (IHC 2024) and in the 2025's edition of the Brazilian Symposium on Informations Systems (SBSI 2025), both promoted by the Brazilian Computer Society (SBC) , the main scientific event in the field of Human-Computer Interaction in Brazil.
+                In my sophomore year, I joined the National Institute of Software Engineering as a junior researcher, conducting research in Human-Computer Interaction within the Smart Cities and Internet of Things research group, under the guidance of professor Kiev Gama and co-advised by Ana Paula Chaves from Northern Arizona University and Danilo Ribeiro from Cesar School . During this time, we got a paper accepted in the 2024's edition of the Brazilian Symposium on Human Factors in Computing Systems (IHC 2024) and in the 2025's edition of the Brazilian Symposium on Informations Systems (SBSI 2025), both promoted by the Brazilian Computer Society (SBC) , the main scientific event in the field of Human-Computer Interaction in Brazil.
               </p>
               <p className="text-muted-foreground mb-4">
               I am a co-founder and researcher at the Geraia research group, working with professors Filipe Calegario, Giordano Cabral and André Neves . At Geraia, I am currently conducting research in Generative AI, focusing on the evaluation and optimization of Language Models (LLMs) in Portuguese and probabilistic-based retrieval algorithms for high-dimensional data.
               </p>
               <p className="text-muted-foreground mb-4">
-              I also co-founded the Artificial Intelligence League of the Federal University of Pernambuco, also known as LIGIA, which is linked to the CIn.AI group, a pioneering AI research group in Brazil founded in the 1970s. As Outreach Director of LIGIA, my main responsibilities include forming partnerships with other groups, companies, and governmental organizations, organizing events to showcase the use of AI in various fields (such as finance, healthcare, and more), and preparing educational materials to teach AI to the broader community. Since the league it’s linked to the Federal University of Pernambuco, we had several professors in our board, such as George DC Cavalcanti, Adiel Filho, Tsang Ing Ren.
+              I also co-founded the Artificial Intelligence League of the Federal University of Pernambuco, also known as LIGIA, which is linked to the CIn.AI group, a pioneering AI research group in Brazil founded in the 1970s. As Outreach Director of LIGIA, my main responsibilities include forming partnerships with other groups, companies, and governmental organizations, organizing events to showcase the use of AI in various fields (such as finance, healthcare, and more), and preparing educational materials to teach AI to the broader community. Since the league it's linked to the Federal University of Pernambuco, we had several professors in our board, such as George DC Cavalcanti, Adiel Filho, Tsang Ing Ren.
               </p>
               <p className="text-muted-foreground mb-4">
               During this time, I also co-founded a start-up called redduo.ai and served as Chief Data Officer/co-Chief Technology Officer, but left before the first year of its founding.
@@ -206,108 +204,49 @@ const About = () => {
             <div>
               <h3 className="text-xl font-display mb-6">Technical Skills</h3>
               
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Machine Learning</span>
-                    <span className="text-sm text-muted-foreground">95%</span>
-                  </div>
-                  <Progress value={95} className="h-2" />
-                </div>
-                
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Deep Learning / Neural Networks</span>
-                    <span className="text-sm text-muted-foreground">90%</span>
-                  </div>
-                  <Progress value={90} className="h-2" />
-                </div>
-                
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Statistical Analysis</span>
-                    <span className="text-sm text-muted-foreground">85%</span>
-                  </div>
-                  <Progress value={85} className="h-2" />
-                </div>
-                
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Data Visualization</span>
-                    <span className="text-sm text-muted-foreground">80%</span>
-                  </div>
-                  <Progress value={80} className="h-2" />
-                </div>
-                
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Natural Language Processing</span>
-                    <span className="text-sm text-muted-foreground">75%</span>
-                  </div>
-                  <Progress value={75} className="h-2" />
-                </div>
+              <div className="glass-morphism p-6 rounded-xl">
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-accent"></div>
+                    <span>Machine Learning</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-accent"></div>
+                    <span>Deep Learning / Neural Networks</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-accent"></div>
+                    <span>Statistical Analysis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-accent"></div>
+                    <span>Data Visualization</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-accent"></div>
+                    <span>Natural Language Processing</span>
+                  </li>
+                </ul>
               </div>
               
               <h3 className="text-xl font-display mt-12 mb-6">Programming Languages</h3>
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="glass-morphism p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span>Python</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 5 ? 'bg-accent' : 'bg-white/20'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className="h-16 w-16" alt="Python" />
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span>R</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" className="h-16 w-16" alt="R" />
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span>SQL</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" className="h-16 w-16" alt="SQL" />
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span>LaTeX</span>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ml-1 ${i < 3 ? 'bg-accent' : 'bg-white/20'}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" className="h-16 w-16" alt="LaTeX" />
                 </div>
-                
-            
               </div>
             </div>
             
@@ -315,68 +254,49 @@ const About = () => {
               <h3 className="text-xl font-display mb-6">Tools & Frameworks</h3>
               
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">TensorFlow</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent/60 rounded-sm"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" className="h-12 w-12 mb-2" alt="TensorFlow" />
+                  <span className="text-xs font-medium">TensorFlow</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">PyTorch</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent/60 rotate-45"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" className="h-12 w-12 mb-2" alt="PyTorch" />
+                  <span className="text-xs font-medium">PyTorch</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">Scikit-learn</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent/60 rounded-md transform rotate-45"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" className="h-12 w-12 mb-2" alt="Scikit-learn" />
+                  <span className="text-xs font-medium">Scikit-learn</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">Pandas</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent/60 rounded-full"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" className="h-12 w-12 mb-2" alt="Pandas" />
+                  <span className="text-xs font-medium">Pandas</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">NumPy</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-2 h-6 bg-accent/60 rounded-full mx-0.5"></div>
-                    <div className="w-2 h-6 bg-accent/60 rounded-full mx-0.5"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" className="h-12 w-12 mb-2" alt="NumPy" />
+                  <span className="text-xs font-medium">NumPy</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">Matplotlib</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-3 bg-accent/60 rounded-md"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://matplotlib.org/stable/_static/logo2.svg" className="h-12 w-12 mb-2" alt="Matplotlib" />
+                  <span className="text-xs font-medium">Matplotlib</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">Jupyter</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent/60 rounded-full"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" className="h-12 w-12 mb-2" alt="Jupyter" />
+                  <span className="text-xs font-medium">Jupyter</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">Keras</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent/60 rounded-md"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" className="h-12 w-12 mb-2" alt="Keras" />
+                  <span className="text-xs font-medium">Keras</span>
                 </div>
                 
-                <div className="glass-morphism p-4 rounded-lg text-center hover-card">
-                  <span className="block text-sm font-medium mb-2">Git</span>
-                  <div className="w-12 h-12 rounded-full bg-accent/10 mx-auto flex items-center justify-center">
-                    <div className="w-4 h-4 bg-accent/60 rotate-45"></div>
-                  </div>
+                <div className="glass-morphism p-4 rounded-lg flex items-center justify-center flex-col">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" className="h-12 w-12 mb-2" alt="Git" />
+                  <span className="text-xs font-medium">Git</span>
                 </div>
               </div>
               
