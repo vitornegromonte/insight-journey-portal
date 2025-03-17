@@ -8,7 +8,7 @@ import {
   CollapsibleContent, 
   CollapsibleTrigger 
 } from "@/components/ui/collapsible";
-import { ChevronDown, ChevronUp, Filter } from "lucide-react";
+import { ChevronDown, Filter } from "lucide-react";
 
 const Projects = () => {
   const [tagFilter, setTagFilter] = useState<string | null>(null);
@@ -65,7 +65,7 @@ const Projects = () => {
             </div>
           </div>
           
-          {/* Technologies filter - now in a collapsible */}
+          {/* Simplified Technology filter */}
           <Collapsible 
             open={isFiltersOpen} 
             onOpenChange={setIsFiltersOpen}
@@ -73,10 +73,9 @@ const Projects = () => {
           >
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-medium text-gray-700">Filter by Technology</h3>
-              <CollapsibleTrigger className="flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/70 transition-colors">
-                <Filter size={16} />
-                <span>More Filters</span>
-                {isFiltersOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              <CollapsibleTrigger className="flex items-center text-sm font-medium text-accent hover:text-accent/70 transition-colors">
+                <Filter size={16} className="mr-1" />
+                {isFiltersOpen ? "Hide Filters" : "Show Filters"}
               </CollapsibleTrigger>
             </div>
             
