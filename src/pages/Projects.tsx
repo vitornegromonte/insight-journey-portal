@@ -5,20 +5,24 @@ import projects from "@/data/ProjectsData";
 import Footer from "@/components/Footer";
 
 const Projects = () => {
-  const [filter, setFilter] = useState<string | null>(null);
+  const [tagFilter, setTagFilter] = useState<string | null>(null);
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   
-  // Extract unique tags from all projects
+  // Extract unique tags and categories from all projects
   const allTags = [...new Set(projects.flatMap(project => project.tags))];
+  const allCategories = [...new Set(projects.flatMap(project => project.categories))];
   
-  // Filter projects based on selected tag
-  const filteredProjects = filter 
-    ? projects.filter(project => project.tags.includes(filter))
-    : projects;
+  // Filter projects based on selected tag and category
+  const filteredProjects = projects.filter(project => {
+    const matchesTag = tagFilter ? project.tags.includes(tagFilter) : true;
+    const matchesCategory = categoryFilter ? project.categories.includes(categoryFilter) : true;
+    return matchesTag && matchesCategory;
+  });
   
   return (
     <div className="bg-white min-h-screen">
       <main className="p-8">
-        <div className="pt-8 pb-16">
+        <div className="pt-8 pb-12">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">My Work</span>
           <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Projects</h1>
           <p className="text-gray-600 max-w-2xl">
@@ -26,28 +30,59 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="mb-8">
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => setFilter(null)}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                filter === null ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              All
-            </button>
-            
-            {allTags.map(tag => (
+        <div className="space-y-6 mb-8">
+          {/* Technologies filter */}
+          <div>
+            <h3 className="text-sm font-medium text-gray-700 mb-3">Filter by Technology</h3>
+            <div className="flex flex-wrap gap-2">
               <button
-                key={tag}
-                onClick={() => setFilter(tag)}
+                onClick={() => setTagFilter(null)}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                  filter === tag ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  tagFilter === null ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                {tag}
+                All Technologies
               </button>
-            ))}
+              
+              {allTags.map(tag => (
+                <button
+                  key={tag}
+                  onClick={() => setTagFilter(tag)}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                    tagFilter === tag ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          {/* Categories filter */}
+          <div>
+            <h3 className="text-sm font-medium text-gray-700 mb-3">Filter by Category</h3>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setCategoryFilter(null)}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  categoryFilter === null ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                All Categories
+              </button>
+              
+              {allCategories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setCategoryFilter(category)}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                    categoryFilter === category ? 'bg-accent text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         
@@ -57,14 +92,23 @@ const Projects = () => {
               key={project.id}
               title={project.title}
               description={project.description}
+              detailedDescription={project.detailedDescription}
               image={project.image}
               tags={project.tags}
+              categories={project.categories}
               githubUrl={project.githubUrl}
               liveUrl={project.liveUrl}
               className="h-full"
             />
           ))}
         </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-12">
+            <h3 className="text-lg font-medium text-gray-900 mb-2">No projects found</h3>
+            <p className="text-gray-600">Try adjusting your filters to find what you're looking for.</p>
+          </div>
+        )}
       </main>
       <Footer />
     </div>
