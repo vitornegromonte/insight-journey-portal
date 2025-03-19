@@ -69,14 +69,14 @@ const Papers = () => {
       location: "Recife, Brazil",
       date: "Sep 2024",
       description: "Explored the current state and future directions of AI in Parkinson Diagnosys.",
-      slidesUrl: "/cp_keynote.pdf",
-      thumbnail: "/cp_thumbnail.jpg",
-      videoUrl: "" // Added empty videoUrl property
+      slidesUrl: "./cp_keynote.pdf",
+      thumbnail: "./cp_thumbnail.jpg",
+      videoUrl: "" 
     },
     {
       id: 2,
       title: 'Really Important Talk',
-      event: 'Life', // Fixed incorrect property name 'evento' to 'event'
+      event: 'Life',
       location: 'World',
       date: 'Eternity',
       description: 'This is a really important talk that you should watch.',
