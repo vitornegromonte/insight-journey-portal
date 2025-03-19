@@ -46,7 +46,7 @@ const Index = () => {
             </a>
 
             <a href="http://medium.com/@vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
-            <BookOpenText x size={24} />
+            <BookOpenText size={24} />
             </a>
           </div>
         </div>
