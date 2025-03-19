@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "Papers", path: "/papers" },
     { name: "Art", path: "/art" },
-    { name: "Contact", path: "/contact" },
+    {/* Header { name: "Contact", path: "/contact" },*/}
   ];
 
   useEffect(() => {
@@ -44,7 +44,8 @@ const Navbar = () => {
           to="/" 
           className="text-xl font-display tracking-tight text-white hover:opacity-80 transition-opacity"
         >
-          <span className="text-gradient-accent">Vitor Negromonte</span>
+          <span className="text-gradient-accent">Vitor </span>
+          <span className="text-gray-900">Negromonte</span>
         </Link>
 
         {/* Desktop Navigation */}

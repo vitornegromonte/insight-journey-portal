@@ -42,7 +42,7 @@ const ArtCard = ({
           isHovered ? "opacity-100" : "opacity-0"
         )}>
           <div className="transform transition-transform duration-300 translate-y-0">
-            <Badge variant="outline" className="bg-black/50 mb-2">
+            <Badge variant="outline" className="bg-black/15 text-white text-xs mb-2">
               {technique}
             </Badge>
             <h4 className="text-white font-display mb-1">{title}</h4>

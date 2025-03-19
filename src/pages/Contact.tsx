@@ -59,7 +59,7 @@ const Contact = () => {
   return (
     <div className="bg-white min-h-screen">
       <main className="p-8">
-        <div className="pt-8 pb-16">
+        <div className="pb-14">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Get In Touch</span>
           <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Contact Me</h1>
           <p className="text-gray-600 max-w-2xl">
@@ -146,29 +146,21 @@ const Contact = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-medium uppercase text-accent mb-2">Email</h3>
-                <p className="text-gray-600">contact@vitornegromonte.dev</p>
+                <p className="text-gray-600">contato.vnco@gmail.com</p>
               </div>
               
-              <div>
-                <h3 className="text-sm font-medium uppercase text-accent mb-2">University</h3>
-                <p className="text-gray-600">Department of Computer Science</p>
-                <p className="text-gray-600">Federal University of Pernambuco</p>
-                <p className="text-gray-600">Recife, Brazil</p>
-              </div>
               
               <div>
                 <h3 className="text-sm font-medium uppercase text-accent mb-2">Social Media</h3>
                 <div className="flex space-x-4 mt-2">
-                  <a href="#" className="text-gray-600 hover:text-accent transition-colors">Twitter</a>
-                  <a href="#" className="text-gray-600 hover:text-accent transition-colors">LinkedIn</a>
-                  <a href="#" className="text-gray-600 hover:text-accent transition-colors">GitHub</a>
+                  <ul>  
+                    <li> <a href="https://instagram.com/vitor.ncabral" className="text-gray-600 hover:text-accent transition-colors"> Instagram </a> </li>
+                    <li> <a href="https://linkedin.com/in/vitornegromonte" className="text-gray-600 hover:text-accent transition-colors">LinkedIn </a> </li>
+                    <li> <a href="https://github.com/vitornegromonte" className="text-gray-600 hover:text-accent transition-colors">GitHub </a> </li>
+                    <li> <a href="https://medium.com/@vitornegromonte" className="text-gray-600 hover:text-accent transition-colors">Medium</a> </li>
+                  </ul>
+                
                 </div>
-              </div>
-              
-              <div>
-                <h3 className="text-sm font-medium uppercase text-accent mb-2">Office Hours</h3>
-                <p className="text-gray-600">Tuesday & Thursday: 2:00 PM - 4:00 PM</p>
-                <p className="text-gray-600">Or by appointment</p>
               </div>
             </div>
           </div>

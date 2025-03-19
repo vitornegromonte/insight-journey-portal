@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Github, Mail, FileText, Linkedin, Instagram } from "lucide-react";
+import { Github, Mail, FileText, Linkedin, Instagram, BookOpenText  } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -15,7 +15,7 @@ const Index = () => {
           <div className="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-2 border-gray-200 mb-8">
             <img 
               src="vnco.JPG" 
-              alt="Profile" 
+              alt="Profile"
               className="w-full h-full object-cover"
             />
           </div>
@@ -25,26 +25,28 @@ const Index = () => {
           </h1>
           
           <p className="text-gray-700 text-lg mb-2 max-w-2xl mx-auto leading-relaxed">
-            Data Scientist and AI Researcher. Currently, conducting research in <span className="font-semibold">Generative AI</span>, working on the 
-            evaluation and optimization of <span className="font-semibold">Language Models (LLMs)</span> in Portuguese and <span className="font-semibold">probabilistic-based
-            retrieval algorithms</span> for high-dimensional data.
+            Data Scientist and AI Researcher. Conducting research in <span className="font-semibold">Generative AI</span> and <span className="font-semibold">Computer Vision</span>.
           </p>
           
           <div className="flex justify-center gap-6 mt-8">
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
+            <a href="cv.pdf" className="text-gray-700 hover:text-accent transition-colors">
               <FileText size={24} />
             </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
+            <a href="mailto:contato.vnco@gmail.com" className="text-gray-700 hover:text-accent transition-colors">
               <Mail size={24} />
             </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
+            <a href="http://github.com/vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
               <Github size={24} />
             </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
+            <a href="http://linkedin.com/in/vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="#" className="text-gray-700 hover:text-accent transition-colors">
+            <a href="http://instagram.com/vitor.ncabral" className="text-gray-700 hover:text-accent transition-colors">
               <Instagram size={24} />
+            </a>
+
+            <a href="http://medium.com/@vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
+            <BookOpenText x size={24} />
             </a>
           </div>
         </div>

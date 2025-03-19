@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Footer from "@/components/Footer";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import ArtCard from "@/components/ArtCard";
 
@@ -21,84 +22,83 @@ const Art = () => {
   const artworks = [
     {
       id: 1,
-      title: "Neural Dreams #1",
-      image: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      technique: "GAN",
-      year: "2023",
-      description: "A neural network-generated landscape inspired by abstract expressionism. Created using a custom GAN architecture trained on landscape paintings.",
-      category: "gan"
+      title: "Life finds a way",
+      image: "life.gif",
+      technique: "Mathematics",
+      year: "2025",
+      description: "life and death; evolution and extinction; the cycle of life finds a way to continue.",
+      category: "math"
     },
     {
       id: 2,
-      title: "Diffusion Patterns",
-      image: "https://images.unsplash.com/photo-1549490349-8643362247b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      technique: "Stable Diffusion",
-      year: "2023",
-      description: "Created using a fine-tuned Stable Diffusion model with custom prompts focusing on color theory and visual rhythm.",
-      category: "diffusion"
+      title: "Lissajous 3:5",
+      image: "public/lissa2.gif",
+      technique: "Mathematics",
+      year: "2025",
+      description: "3:5 ratio",
+      category: "math"
     },
     {
       id: 3,
-      title: "Algorithmic Landscape",
-      image: "https://images.unsplash.com/photo-1604871000636-074fa5117945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      technique: "StyleGAN",
-      year: "2022",
-      description: "A series exploring the capabilities of StyleGAN to generate novel landscape compositions that exist between realism and abstraction.",
-      category: "gan"
+      title: "Lissajous  3:4",
+      image: "public/lissa1.gif",
+      technique: "Mathematics",
+      year: "2025",
+      description: "3:4 ratio",
+      category: "math"
     },
+
     {
       id: 4,
-      title: "Fractal Composition",
-      image: "https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=879&q=80",
-      technique: "Fractal Art",
-      year: "2022",
-      description: "Generated using custom fractal algorithms with parameters mapped to music inputs, creating visual representations of audio patterns.",
-      category: "fractal"
+      title: "orange and teal-ish",
+      image: "orange and teal.jpeg",
+      technique: "Photography",
+      year: "2019",
+      description: "the sky just seemed to be beautiful that day",
+      category: "photo"
     },
     {
       id: 5,
-      title: "Neural Abstraction",
-      image: "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-      technique: "BigGAN",
-      year: "2022",
-      description: "An exploration of abstract color fields using BigGAN with class vector manipulation to create smooth transitions between concepts.",
-      category: "gan"
+      title: "home",
+      image: "orange.jpeg",
+      technique: "Photography",
+      year: "2024",
+      description: "parents old orange tree",
+      category: "photo"
     },
     {
       id: 6,
-      title: "Quantum Dreams",
-      image: "https://images.unsplash.com/photo-1614851099511-773084f6911d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-      technique: "Diffusion Model",
-      year: "2023",
-      description: "Inspired by quantum physics visualizations, this piece uses diffusion models to create representations of quantum probability fields.",
-      category: "diffusion"
+      title: "movie night",
+      image: "cine.jpg",
+      technique: "Photography",
+      year: "2024",
+      description: "\"I'm still here\" premiered at the 15th Janela Internacional de Cinema do Recife, with Walter Salles.",
+      category: "photo"
     },
     {
       id: 7,
-      title: "Digital Brushstrokes",
-      image: "https://images.unsplash.com/photo-1573096108468-702f6014ef28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-      technique: "Neural Style Transfer",
-      year: "2021",
-      description: "A study in neural style transfer using custom loss functions to better preserve structural elements while transferring stylistic elements.",
-      category: "style-transfer"
+      title: "Rio seems fine",
+      image: "rio.jpeg",
+      technique: "Photography",
+      year: "2020",
+      description: "3AM - Guanabara Bay, Rio de Janeiro, Brazil",
+      category: "photo"
     },
     {
       id: 8,
-      title: "Emergent Patterns",
-      image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      technique: "Generative Adversarial Network",
-      year: "2022",
-      description: "This work explores how complex patterns emerge from simple rules in GAN training, with special attention to mode collapse as an artistic element.",
-      category: "gan"
-    },
+      title: "Neruda's Backyard",
+      image: "neruda.jpg",
+      technique: "Photography",
+      year: "2019",
+      description: "Pablo Neruda's backyard in Isla Negra, Chile. The poet's house is a museum now.",
+      category: "photo"
+    }
   ];
   
   const categories = [
     { id: "all", name: "All Works" },
-    { id: "gan", name: "GAN" },
-    { id: "diffusion", name: "Diffusion Models" },
-    { id: "fractal", name: "Fractal Art" },
-    { id: "style-transfer", name: "Style Transfer" },
+    { id: "math", name: "Mathematics" },
+    { id: "photo", name: "Photography" } 
   ];
   
   const filteredArtworks = filter === 'all' 
@@ -109,11 +109,11 @@ const Art = () => {
     <div className="bg-white min-h-screen">
       <main className="p-8">
         <div className="pt-8 pb-16">
-          <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Portfolio</span>
-          <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">AI Art Gallery</h1>
+          <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Hobby</span>
+          <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Art Gallery</h1>
           <p className="text-gray-600 max-w-2xl">
-            Exploring the intersection of artificial intelligence and artistic expression
-            through generative algorithms and creative coding.
+            Exploring the intersection of computer science, mathematics and artistic expression
+            through photography, generative algorithms and creative coding.
           </p>
         </div>
         
@@ -174,6 +174,7 @@ const Art = () => {
           )}
         </DialogContent>
       </Dialog>
+      <Footer />
     </div>
   );
 };

@@ -23,7 +23,7 @@ const PaperCard = ({
   pdfUrl,
 }: PaperCardProps) => {
   return (
-    <Card className="bg-primary-100 border border-primary-300 overflow-hidden hover:bg-primary-200">
+    <Card className="bg-primary-100 border border-primary-300 overflow-hidden hover:bg-primary-200 hover:shadow-lg transition-all duration-300">
       <div className="p-5">
         <div className="flex items-center gap-2 text-secondary-700 text-sm mb-2">
           <CalendarDays size={14} />
