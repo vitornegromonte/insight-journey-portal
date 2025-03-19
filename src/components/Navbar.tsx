@@ -15,7 +15,7 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "Papers", path: "/papers" },
     { name: "Art", path: "/art" },
-    {/* Header { name: "Contact", path: "/contact" },*/}
+    { name: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {

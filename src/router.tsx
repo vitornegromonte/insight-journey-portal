@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
 
-// Create routes with the correct base name for GitHub Pages
+// Create routes with the correct base name
 const router = createBrowserRouter(
   [
     {
