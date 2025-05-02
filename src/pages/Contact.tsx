@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -14,7 +15,6 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
-import Navbar from "@/components/Navbar";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -57,9 +57,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <div className="container mx-auto px-4 py-20">
+    <div className="bg-white min-h-screen">
+      <main className="p-8">
         <div className="pb-14">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Get In Touch</span>
           <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Contact Me</h1>
@@ -166,7 +165,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

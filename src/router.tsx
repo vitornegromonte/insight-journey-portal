@@ -7,6 +7,7 @@ import Papers from "./pages/Papers";
 import Art from "./pages/Art";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Sidebar from "./components/Sidebar";
 
 // Create routes with the correct base name
 const router = createBrowserRouter(
@@ -17,27 +18,69 @@ const router = createBrowserRouter(
     },
     {
       path: "/about",
-      element: <About />,
+      element: (
+        <>
+          <Sidebar />
+          <main className="pl-16 md:pl-60">
+            <About />
+          </main>
+        </>
+      ),
     },
     {
       path: "/projects",
-      element: <Projects />,
+      element: (
+        <>
+          <Sidebar />
+          <main className="pl-16 md:pl-60">
+            <Projects />
+          </main>
+        </>
+      ),
     },
     {
       path: "/papers",
-      element: <Papers />,
+      element: (
+        <>
+          <Sidebar />
+          <main className="pl-16 md:pl-60">
+            <Papers />
+          </main>
+        </>
+      ),
     },
     {
       path: "/art",
-      element: <Art />,
+      element: (
+        <>
+          <Sidebar />
+          <main className="pl-16 md:pl-60">
+            <Art />
+          </main>
+        </>
+      ),
     },
     {
       path: "/contact",
-      element: <Contact />,
+      element: (
+        <>
+          <Sidebar />
+          <main className="pl-16 md:pl-60">
+            <Contact />
+          </main>
+        </>
+      ),
     },
     {
       path: "*",
-      element: <NotFound />,
+      element: (
+        <>
+          <Sidebar />
+          <main className="pl-16 md:pl-60">
+            <NotFound />
+          </main>
+        </>
+      ),
     },
   ],
   { basename: "" }
