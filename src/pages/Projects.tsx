@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/ProjectsData";
 import Footer from "@/components/Footer";
@@ -7,7 +8,8 @@ import {
   CollapsibleContent, 
   CollapsibleTrigger 
 } from "@/components/ui/collapsible";
-import { ChevronDown, Filter } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Filter, X } from "lucide-react";
 
 const Projects = () => {
   const [tagFilter, setTagFilter] = useState<string | null>(null);
@@ -24,6 +26,19 @@ const Projects = () => {
     const matchesCategory = categoryFilter ? project.categories.includes(categoryFilter) : true;
     return matchesTag && matchesCategory;
   });
+
+  // Automatically open filters if a tag or category is selected
+  useEffect(() => {
+    if (tagFilter) {
+      setIsFiltersOpen(true);
+    }
+  }, [tagFilter]);
+  
+  // Clear all filters function
+  const clearFilters = () => {
+    setTagFilter(null);
+    setCategoryFilter(null);
+  };
   
   return (
     <div className="bg-white min-h-screen">
@@ -37,6 +52,45 @@ const Projects = () => {
         </div>
         
         <div className="space-y-6 mb-8">
+          {/* Filter stats and clear button */}
+          <div className="flex justify-between items-center">
+            <p className="text-sm text-gray-500">
+              Showing <span className="font-medium">{filteredProjects.length}</span> of {projects.length} projects
+            </p>
+            
+            {(tagFilter || categoryFilter) && (
+              <button
+                onClick={clearFilters}
+                className="text-sm flex items-center text-gray-500 hover:text-accent transition-colors"
+              >
+                <X size={14} className="mr-1" /> Clear filters
+              </button>
+            )}
+          </div>
+          
+          {/* Active filters display */}
+          {(tagFilter || categoryFilter) && (
+            <div className="flex flex-wrap gap-2 animate-fade-in">
+              {categoryFilter && (
+                <Badge variant="outline" className="bg-accent/10 text-accent px-3 py-1 flex items-center gap-1">
+                  Category: {categoryFilter}
+                  <button onClick={() => setCategoryFilter(null)} className="ml-1 hover:text-accent/80">
+                    <X size={14} />
+                  </button>
+                </Badge>
+              )}
+              
+              {tagFilter && (
+                <Badge variant="outline" className="bg-accent/10 text-accent px-3 py-1 flex items-center gap-1">
+                  Technology: {tagFilter}
+                  <button onClick={() => setTagFilter(null)} className="ml-1 hover:text-accent/80">
+                    <X size={14} />
+                  </button>
+                </Badge>
+              )}
+            </div>
+          )}
+          
           {/* Categories filter */}
           <div>
             <h3 className="text-sm font-medium text-gray-700 mb-3">Filter by Category</h3>
@@ -64,7 +118,7 @@ const Projects = () => {
             </div>
           </div>
           
-          {/* Simplified Technology filter */}
+          {/* Technology filter */}
           <Collapsible 
             open={isFiltersOpen} 
             onOpenChange={setIsFiltersOpen}
@@ -74,12 +128,12 @@ const Projects = () => {
               <h3 className="text-sm font-medium text-gray-700">Filter by Technology</h3>
               <CollapsibleTrigger className="flex items-center text-sm font-medium text-accent hover:text-accent/70 transition-colors">
                 <Filter size={16} className="mr-1" />
-                {isFiltersOpen ? "Hide Filters" : "Show Filters"}
+                {isFiltersOpen ? "Hide Technologies" : "Show Technologies"}
               </CollapsibleTrigger>
             </div>
             
-            <CollapsibleContent className="mt-4">
-              <div className="flex flex-wrap gap-2">
+            <CollapsibleContent className="mt-4 overflow-hidden">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                 <button
                   onClick={() => setTagFilter(null)}
                   className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
@@ -123,15 +177,20 @@ const Projects = () => {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
+          <div className="text-center py-12 border border-gray-100 rounded-lg bg-gray-50">
             <h3 className="text-lg font-medium text-gray-900 mb-2">No projects found</h3>
-            <p className="text-gray-600">Try adjusting your filters to find what you're looking for.</p>
+            <p className="text-gray-600 mb-4">Try adjusting your filters to find what you're looking for.</p>
+            <button 
+              onClick={clearFilters}
+              className="px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors"
+            >
+              Clear all filters
+            </button>
           </div>
         )}
       </main>
       <Footer />
     </div>
-    
   );
 };
 
