@@ -64,6 +64,13 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <a 
+            href="/cv.pdf"
+            download
+            className="text-sm font-medium text-gray-500 hover:text-accent transition-colors duration-200"
+          >
+            Curriculum Vitæ
+          </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -94,6 +101,13 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <a 
+              href="/cv.pdf"
+              download
+              className="px-4 py-2 text-sm font-medium rounded transition-colors text-gray-500 hover:text-accent"
+            >
+              Curriculum Vitæ
+            </a>
           </nav>
         </div>
       )}

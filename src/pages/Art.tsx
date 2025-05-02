@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import ArtCard from "@/components/ArtCard";
+import Navbar from "@/components/Navbar";
 
 const Art = () => {
   const [selectedArt, setSelectedArt] = useState<null | {
@@ -106,75 +107,78 @@ const Art = () => {
     : artworks.filter(art => art.category === filter);
 
   return (
-    <div className="bg-white min-h-screen">
-      <main className="p-8">
-        <div className="pt-8 pb-16">
-          <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Hobby</span>
-          <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Art Gallery</h1>
-          <p className="text-gray-600 max-w-2xl">
-            Exploring the intersection of computer science, mathematics and artistic expression
-            through photography, generative algorithms and creative coding.
-          </p>
-        </div>
-        
-        <Tabs defaultValue="all" className="w-full">
-          <div className="mb-8">
-            <TabsList className="bg-gray-100 p-1">
-              {categories.map(category => (
-                <TabsTrigger 
-                  key={category.id} 
-                  value={category.id}
-                  onClick={() => setFilter(category.id)}
-                  className="data-[state=active]:bg-accent/20"
-                >
-                  {category.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <div className="container mx-auto px-4 py-20">
+        <main className="p-8">
+          <div className="pt-8 pb-16">
+            <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Hobby</span>
+            <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Art Gallery</h1>
+            <p className="text-gray-600 max-w-2xl">
+              Exploring the intersection of computer science, mathematics and artistic expression
+              through photography, generative algorithms and creative coding.
+            </p>
           </div>
           
-          <TabsContent value={filter} className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {filteredArtworks.map(artwork => (
-                <ArtCard 
-                  key={artwork.id}
-                  title={artwork.title}
-                  image={artwork.image}
-                  technique={artwork.technique}
-                  year={artwork.year}
-                  onClick={() => handleArtClick(artwork)}
-                />
-              ))}
+          <Tabs defaultValue="all" className="w-full">
+            <div className="mb-8">
+              <TabsList className="bg-gray-100 p-1">
+                {categories.map(category => (
+                  <TabsTrigger 
+                    key={category.id} 
+                    value={category.id}
+                    onClick={() => setFilter(category.id)}
+                    className="data-[state=active]:bg-accent/20"
+                  >
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
             </div>
-          </TabsContent>
-        </Tabs>
-      </main>
-      
-      <Dialog open={!!selectedArt} onOpenChange={(open) => !open && setSelectedArt(null)}>
-        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-3xl">
-          {selectedArt && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="aspect-square overflow-hidden rounded-md">
-                <img 
-                  src={selectedArt.image} 
-                  alt={selectedArt.title} 
-                  className="w-full h-full object-cover"
-                />
+            
+            <TabsContent value={filter} className="mt-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {filteredArtworks.map(artwork => (
+                  <ArtCard 
+                    key={artwork.id}
+                    title={artwork.title}
+                    image={artwork.image}
+                    technique={artwork.technique}
+                    year={artwork.year}
+                    onClick={() => handleArtClick(artwork)}
+                  />
+                ))}
               </div>
-              <div>
-                <h3 className="text-xl font-display mb-2">{selectedArt.title}</h3>
-                <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
-                  <span>{selectedArt.technique}</span>
-                  <span className="text-gray-300">•</span>
-                  <span>{selectedArt.year}</span>
+            </TabsContent>
+          </Tabs>
+        </main>
+        
+        <Dialog open={!!selectedArt} onOpenChange={(open) => !open && setSelectedArt(null)}>
+          <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-3xl">
+            {selectedArt && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="aspect-square overflow-hidden rounded-md">
+                  <img 
+                    src={selectedArt.image} 
+                    alt={selectedArt.title} 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <p className="text-gray-600">{selectedArt.description}</p>
+                <div>
+                  <h3 className="text-xl font-display mb-2">{selectedArt.title}</h3>
+                  <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
+                    <span>{selectedArt.technique}</span>
+                    <span className="text-gray-300">•</span>
+                    <span>{selectedArt.year}</span>
+                  </div>
+                  <p className="text-gray-600">{selectedArt.description}</p>
+                </div>
               </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
-      <Footer />
+            )}
+          </DialogContent>
+        </Dialog>
+        <Footer />
+      </div>
     </div>
   );
 };
