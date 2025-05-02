@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +15,6 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "Papers", path: "/papers" },
     { name: "Art", path: "/art" },
-    { name: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {
@@ -64,6 +63,14 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <a 
+            href="/cv.pdf" 
+            download
+            className="text-sm font-medium text-gray-500 hover:text-accent transition-colors duration-200 flex items-center"
+          >
+            <FileText size={16} className="mr-1" />
+            CV
+          </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -94,6 +101,14 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <a 
+              href="/cv.pdf" 
+              download
+              className="px-4 py-2 text-sm font-medium rounded transition-colors text-gray-500 hover:text-accent flex items-center"
+            >
+              <FileText size={16} className="mr-1" />
+              CV
+            </a>
           </nav>
         </div>
       )}

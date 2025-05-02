@@ -1,7 +1,7 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { FileText, Layers, Paintbrush, User, Mail, Home, FileUser, Paperclip } from "lucide-react";
+import { FileText, Layers, Paintbrush, User, Home, Paperclip } from "lucide-react";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -11,8 +11,7 @@ const Sidebar = () => {
     { name: "About", path: "/about", icon: <User size={18} /> },
     { name: "Projects", path: "/projects", icon: <Layers size={18} /> },
     { name: "Papers & Talks", path: "/papers", icon: <FileText size={18} /> },
-    { name: "Art", path: "/art", icon: <Paintbrush size={18} /> },
-    { name: "Contact", path: "/contact", icon: <Mail size={18} /> }
+    { name: "Art", path: "/art", icon: <Paintbrush size={18} /> }
   ];
 
   return (

@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Papers from "./pages/Papers";
 import Art from "./pages/Art";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
 
@@ -56,17 +55,6 @@ const router = createBrowserRouter(
           <Sidebar />
           <main className="pl-16 md:pl-60">
             <Art />
-          </main>
-        </>
-      ),
-    },
-    {
-      path: "/contact",
-      element: (
-        <>
-          <Sidebar />
-          <main className="pl-16 md:pl-60">
-            <Contact />
           </main>
         </>
       ),
