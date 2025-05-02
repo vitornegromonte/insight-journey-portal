@@ -36,16 +36,16 @@ const Navbar = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled ? "py-3 glass-morphism" : "py-6 bg-transparent"
+        isScrolled ? "py-3 bg-white/80 backdrop-blur-md shadow-sm" : "py-6 bg-transparent"
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link 
           to="/" 
-          className="text-xl font-display tracking-tight text-white hover:opacity-80 transition-opacity"
+          className="text-xl font-display tracking-tight text-gray-900 hover:opacity-80 transition-opacity"
         >
-          <span className="text-gradient-accent">Vitor </span>
-          <span className="text-gray-900">Negromonte</span>
+          <span className="text-accent">Vitor </span>
+          <span>Negromonte</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -55,10 +55,10 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               className={cn(
-                "link-underline text-sm font-medium transition-colors",
+                "text-sm font-medium transition-colors duration-200",
                 location.pathname === link.path 
                   ? "text-accent" 
-                  : "text-muted-foreground hover:text-gradient-accent"
+                  : "text-gray-500 hover:text-accent"
               )}
             >
               {link.name}
@@ -68,16 +68,17 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-accent"
+          className="md:hidden text-gray-700"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-morphism animate-fade-in absolute top-full left-0 right-0 p-4 mt-0">
+        <div className="md:hidden bg-white border-t border-gray-100 animate-fade-in absolute top-full left-0 right-0 p-4 mt-0 shadow-md">
           <nav className="flex flex-col space-y-4">
             {links.map((link) => (
               <Link
@@ -86,8 +87,8 @@ const Navbar = () => {
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded transition-colors",
                   location.pathname === link.path 
-                    ? "bg-accent/20 text-accent" 
-                    : "text-muted-foreground hover:text-gradient-accent"
+                    ? "text-accent" 
+                    : "text-gray-500 hover:text-accent"
                 )}
               >
                 {link.name}

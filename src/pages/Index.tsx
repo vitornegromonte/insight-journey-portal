@@ -12,40 +12,37 @@ const Index = () => {
       <Navbar />
       <main className="container mx-auto px-4 py-20 flex flex-col items-center min-h-[calc(100vh-200px)] justify-center">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-2 border-gray-200 mb-8">
-            <img 
-              src="vnco.JPG" 
-              alt="Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Avatar className="w-32 h-32 md:w-40 md:h-40 mx-auto border border-gray-100 shadow-sm mb-8">
+            <AvatarImage src="vnco.JPG" alt="Vitor Negromonte" className="object-cover" />
+            <AvatarFallback>VN</AvatarFallback>
+          </Avatar>
           
-          <h1 className="text-gray-900 font-display text-4xl md:text-5xl mb-4">
+          <h1 className="text-gray-900 font-display text-4xl md:text-5xl mb-4 tracking-tight">
             Vitor Negromonte
           </h1>
           
-          <p className="text-gray-700 text-lg mb-2 max-w-2xl mx-auto leading-relaxed">
-            Data Scientist and AI Researcher. Conducting research in <span className="font-semibold">Generative AI</span> and <span className="font-semibold">Computer Vision</span>.
+          <p className="text-gray-600 text-lg mb-2 max-w-lg mx-auto leading-relaxed font-light">
+            Data Scientist and AI Researcher. Conducting research in <span className="text-accent">Generative AI</span> and <span className="text-accent">Computer Vision</span>.
           </p>
           
-          <div className="flex justify-center gap-6 mt-8">
-            <a href="cv.pdf" className="text-gray-700 hover:text-accent transition-colors">
-              <FileText size={24} />
+          <div className="flex justify-center gap-6 mt-10">
+            <a href="cv.pdf" className="text-gray-500 hover:text-accent transition-colors duration-300">
+              <FileText size={20} />
             </a>
-            <a href="mailto:contato.vnco@gmail.com" className="text-gray-700 hover:text-accent transition-colors">
-              <Mail size={24} />
+            <a href="mailto:contato.vnco@gmail.com" className="text-gray-500 hover:text-accent transition-colors duration-300">
+              <Mail size={20} />
             </a>
-            <a href="http://github.com/vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
-              <Github size={24} />
+            <a href="http://github.com/vitornegromonte" className="text-gray-500 hover:text-accent transition-colors duration-300">
+              <Github size={20} />
             </a>
-            <a href="http://linkedin.com/in/vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
-              <Linkedin size={24} />
+            <a href="http://linkedin.com/in/vitornegromonte" className="text-gray-500 hover:text-accent transition-colors duration-300">
+              <Linkedin size={20} />
             </a>
-            <a href="http://instagram.com/vitor.ncabral" className="text-gray-700 hover:text-accent transition-colors">
-              <Instagram size={24} />
+            <a href="http://instagram.com/vitor.ncabral" className="text-gray-500 hover:text-accent transition-colors duration-300">
+              <Instagram size={20} />
             </a>
-            <a href="http://medium.com/@vitornegromonte" className="text-gray-700 hover:text-accent transition-colors">
-              <BookOpenText size={24} />
+            <a href="http://medium.com/@vitornegromonte" className="text-gray-500 hover:text-accent transition-colors duration-300">
+              <BookOpenText size={20} />
             </a>
           </div>
         </div>
