@@ -35,7 +35,7 @@ const Navbar = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled ? "py-3 bg-white/80 backdrop-blur-md shadow-sm" : "py-6 bg-transparent"
+        isScrolled ? "py-2 bg-white/80 backdrop-blur-md shadow-sm" : "py-4 md:py-6 bg-transparent"
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
@@ -48,7 +48,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {links.map((link) => (
             <Link
               key={link.path}
@@ -75,7 +75,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 p-1"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -86,7 +86,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 animate-fade-in absolute top-full left-0 right-0 p-4 mt-0 shadow-md">
-          <nav className="flex flex-col space-y-4">
+          <nav className="flex flex-col space-y-3">
             {links.map((link) => (
               <Link
                 key={link.path}
