@@ -1,15 +1,22 @@
-
 import { useEffect, useRef } from "react";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { 
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent
+} from "@/components/ui/collapsible";
+import { Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   // Refs for sections that will fade in
   const bioRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll animations
   useEffect(() => {
@@ -24,7 +31,7 @@ const About = () => {
       { threshold: 0.1 }
     );
 
-    const sections = [bioRef.current, educationRef.current, skillsRef.current];
+    const sections = [bioRef.current, educationRef.current, skillsRef.current, timelineRef.current];
     sections.forEach((section) => {
       if (section) {
         observer.observe(section);
@@ -95,6 +102,155 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+      
+      {/* Timeline Section */}
+      <section ref={timelineRef} className="py-16 section-fade-in bg-dark-accent">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-display mb-10 text-center">My Timeline</h2>
+          
+          <div className="max-w-3xl mx-auto">
+            <div className="relative border-l border-accent/50 pl-6 ml-4 md:ml-6">
+              
+              {/* Timeline Item */}
+              <div className="mb-12 relative">
+                <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border border-accent/50 bg-dark flex items-center justify-center">
+                  <div className="h-3 w-3 rounded-full bg-accent"></div>
+                </div>
+                <div className="glass-morphism p-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                  <time className="mb-1 text-sm font-normal leading-none text-accent flex items-center gap-1">
+                    <Calendar className="w-4 h-4" /> 2022 - Present
+                  </time>
+                  <h3 className="text-xl font-semibold mt-2">B.Sc. in Statistics</h3>
+                  <p className="text-muted-foreground text-sm mt-1">Federal University of Pernambuco</p>
+                  <Collapsible className="mt-2">
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="px-0">
+                        <span className="text-xs text-accent">Read more</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pt-2">
+                      <p className="text-sm text-muted-foreground">
+                        Major in Statistics with research focus on machine learning and computational intelligence. 
+                        Participating in various research projects and academic initiatives.
+                      </p>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              </div>
+              
+              {/* Timeline Item */}
+              <div className="mb-12 relative">
+                <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border border-accent/50 bg-dark flex items-center justify-center">
+                  <div className="h-3 w-3 rounded-full bg-accent"></div>
+                </div>
+                <div className="glass-morphism p-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                  <time className="mb-1 text-sm font-normal leading-none text-accent flex items-center gap-1">
+                    <Calendar className="w-4 h-4" /> 2023 - Present
+                  </time>
+                  <h3 className="text-xl font-semibold mt-2">Researcher at Geraia</h3>
+                  <p className="text-muted-foreground text-sm mt-1">Federal University of Pernambuco</p>
+                  <Collapsible className="mt-2">
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="px-0">
+                        <span className="text-xs text-accent">Read more</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pt-2">
+                      <p className="text-sm text-muted-foreground">
+                        Conducting research in Generative AI, focusing on evaluating Language Models in Portuguese 
+                        for performance, scalability, and adaptability in emergent languages.
+                      </p>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              </div>
+              
+              {/* Timeline Item */}
+              <div className="mb-12 relative">
+                <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border border-accent/50 bg-dark flex items-center justify-center">
+                  <div className="h-3 w-3 rounded-full bg-accent"></div>
+                </div>
+                <div className="glass-morphism p-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                  <time className="mb-1 text-sm font-normal leading-none text-accent flex items-center gap-1">
+                    <Calendar className="w-4 h-4" /> 2023 - 2024
+                  </time>
+                  <h3 className="text-xl font-semibold mt-2">Undergraduate Researcher</h3>
+                  <p className="text-muted-foreground text-sm mt-1">National Institute of Software Engineering (INES)</p>
+                  <Collapsible className="mt-2">
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="px-0">
+                        <span className="text-xs text-accent">Read more</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pt-2">
+                      <p className="text-sm text-muted-foreground">
+                        Assisted in developing quantitative tools for analysis and enhancing accessibility 
+                        techniques for apps designed to support adults on the autism spectrum.
+                      </p>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              </div>
+              
+              {/* Timeline Item */}
+              <div className="mb-12 relative">
+                <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border border-accent/50 bg-dark flex items-center justify-center">
+                  <div className="h-3 w-3 rounded-full bg-accent"></div>
+                </div>
+                <div className="glass-morphism p-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                  <time className="mb-1 text-sm font-normal leading-none text-accent flex items-center gap-1">
+                    <Calendar className="w-4 h-4" /> 2023 - 2024
+                  </time>
+                  <h3 className="text-xl font-semibold mt-2">Co-founder and Data Scientist</h3>
+                  <p className="text-muted-foreground text-sm mt-1">redduo.ai</p>
+                  <Collapsible className="mt-2">
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="px-0">
+                        <span className="text-xs text-accent">Read more</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pt-2">
+                      <p className="text-sm text-muted-foreground">
+                        Worked as a Data Scientist, conducting data analysis to support business intelligence initiatives 
+                        and developing software automations.
+                      </p>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              </div>
+              
+              {/* Timeline Item */}
+              <div className="relative">
+                <div className="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border border-accent/50 bg-dark flex items-center justify-center">
+                  <div className="h-3 w-3 rounded-full bg-accent"></div>
+                </div>
+                <div className="glass-morphism p-4 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                  <time className="mb-1 text-sm font-normal leading-none text-accent flex items-center gap-1">
+                    <Calendar className="w-4 h-4" /> 2024 - Present
+                  </time>
+                  <h3 className="text-xl font-semibold mt-2">Co-founder and Outreach Director</h3>
+                  <p className="text-muted-foreground text-sm mt-1">Ligia</p>
+                  <Collapsible className="mt-2">
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="px-0">
+                        <span className="text-xs text-accent">Read more</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pt-2">
+                      <p className="text-sm text-muted-foreground">
+                        Building partnerships, organizing AI-focused events, and developing educational materials 
+                        to promote AI across various fields.
+                      </p>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
         </div>
       </section>
       
@@ -222,7 +378,6 @@ const About = () => {
         </div>
       </section>
       
-      {/* Skills Section */}
       {/* Skills Section */}
       <section ref={skillsRef} className="py-16 section-fade-in">
         <div className="container mx-auto">
