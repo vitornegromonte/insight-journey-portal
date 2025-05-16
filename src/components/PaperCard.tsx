@@ -1,7 +1,8 @@
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, ExternalLink } from "lucide-react";
+import { CalendarDays, ExternalLink, FileText, Users } from "lucide-react";
 
 interface PaperCardProps {
   title: string;
@@ -23,40 +24,57 @@ const PaperCard = ({
   pdfUrl,
 }: PaperCardProps) => {
   return (
-    <Card className="bg-primary-100 border border-primary-300 overflow-hidden hover:bg-primary-200 hover:shadow-lg transition-all duration-300">
+    <Card className="overflow-hidden border border-gray-200 hover:shadow-md transition-all duration-300">
       <div className="p-5">
-        <div className="flex items-center gap-2 text-secondary-700 text-sm mb-2">
-          <CalendarDays size={14} />
-          <span>{year}</span>
-          <span className="px-2 text-secondary-500">•</span>
-          <span>{conference}</span>
+        <div className="flex flex-wrap items-center gap-2 text-gray-500 text-sm mb-2">
+          <div className="flex items-center">
+            <CalendarDays size={14} className="mr-1" />
+            <span>{year}</span>
+          </div>
+          <span className="px-1 text-gray-300">•</span>
+          <span className="font-medium text-gray-600">{conference}</span>
         </div>
         
-        <h3 className="text-xl font-display text-primary-900 mb-2">{title}</h3>
-        <p className="text-secondary-600 text-sm mb-3">{authors}</p>
+        <h3 className="text-lg font-medium font-display text-gray-900 mb-2 leading-tight">{title}</h3>
+        
+        <div className="flex items-start gap-2 mb-3">
+          <Users size={14} className="mt-1 text-gray-500 flex-shrink-0" />
+          <p className="text-gray-600 text-sm">{authors}</p>
+        </div>
         
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag) => (
-            <Badge key={tag} variant="outline" className="text-xs text-primary-700 border-primary-500">
+            <Badge key={tag} variant="outline" className="text-xs text-gray-600 border-gray-300 bg-gray-50">
               {tag}
             </Badge>
           ))}
         </div>
         
-        <p className="text-secondary-600 text-sm mb-4 line-clamp-3">{abstract}</p>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{abstract}</p>
         
-        <Button asChild variant = "outline" className="gap-2">
-          <a 
-            href={pdfUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2"
-          >
-            <span>Read Paper</span>
-            <ExternalLink size={16} />
-          </a>
-        </Button>
-
+        <div className="flex gap-3">
+          <Button asChild variant="outline" size="sm" className="gap-2">
+            <a 
+              href={pdfUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <FileText size={14} />
+              <span>PDF</span>
+            </a>
+          </Button>
+          
+          <Button asChild size="sm" className="gap-2">
+            <a 
+              href={pdfUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <ExternalLink size={14} />
+              <span>Read Paper</span>
+            </a>
+          </Button>
+        </div>
       </div>
     </Card>
   );
