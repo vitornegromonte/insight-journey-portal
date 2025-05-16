@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import ArtCard from "@/components/ArtCard";
+import Navbar from "@/components/Navbar";
 
 const Art = () => {
   const [selectedArt, setSelectedArt] = useState<null | {
@@ -107,7 +108,8 @@ const Art = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <main className="p-8">
+      <Navbar />
+      <main className="pt-24 p-8">
         <div className="pt-8 pb-16">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">Hobby</span>
           <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Art Gallery</h1>

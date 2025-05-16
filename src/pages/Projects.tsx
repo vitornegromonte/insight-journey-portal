@@ -15,6 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Filter, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
 
 const Projects = () => {
   const [tagFilter, setTagFilter] = useState<string | null>(null);
@@ -39,7 +40,8 @@ const Projects = () => {
   
   return (
     <div className="bg-white min-h-screen">
-      <main className="p-8">
+      <Navbar />
+      <main className="pt-24 p-8">
         <div className="pt-8 pb-12">
           <span className="text-sm uppercase tracking-wider text-accent mb-2 inline-block">My Work</span>
           <h1 className="text-gray-900 font-display text-3xl md:text-4xl mb-4">Projects</h1>

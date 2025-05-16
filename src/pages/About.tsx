@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import {
   CollapsibleContent
 } from "@/components/ui/collapsible";
 import { Calendar } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const About = () => {
   // Refs for sections that will fade in
@@ -367,11 +367,14 @@ const About = () => {
   };
 
   return (
-    <div className="bg-dark min-h-screen">
-      <Header />
-      <Bio />
-      <Education />
-      <Skills />
+    <div className="bg-white min-h-screen">
+      <Navbar />
+      <main className="pt-28 md:pt-32 pb-20 px-4">
+        <Header />
+        <Bio />
+        <Education />
+        <Skills />
+      </main>
       <Footer />
     </div>
   );

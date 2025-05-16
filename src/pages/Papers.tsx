@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Footer from "@/components/Footer";
 import PaperCard from "@/components/PaperCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Navbar from "@/components/Navbar";
 
 const Papers = () => {
   const [activeTab, setActiveTab] = useState("papers");
@@ -87,6 +88,8 @@ const Papers = () => {
 
   return (
     <div className="bg-dark min-h-screen">
+      <Navbar />
+      
       {/* Header */}
       <section className="pt-32 pb-16 px-4">
         <div className="container mx-auto text-center">
