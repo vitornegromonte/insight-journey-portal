@@ -24,7 +24,7 @@ const PaperCard = ({
   pdfUrl,
 }: PaperCardProps) => {
   return (
-    <Card className="overflow-hidden border border-gray-200 hover:shadow-md transition-all duration-300">
+    <Card className="overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-sm">
       <div className="p-5">
         <div className="flex flex-wrap items-center gap-2 text-gray-500 text-sm mb-2">
           <div className="flex items-center">
@@ -35,7 +35,7 @@ const PaperCard = ({
           <span className="font-medium text-gray-600">{conference}</span>
         </div>
         
-        <h3 className="text-lg font-medium font-display text-gray-900 mb-2 leading-tight">{title}</h3>
+        <h3 className="text-lg font-medium font-display text-gray-900 mb-2 leading-tight group-hover:text-accent transition-colors">{title}</h3>
         
         <div className="flex items-start gap-2 mb-3">
           <Users size={14} className="mt-1 text-gray-500 flex-shrink-0" />
@@ -44,7 +44,7 @@ const PaperCard = ({
         
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag) => (
-            <Badge key={tag} variant="outline" className="text-xs text-gray-600 border-gray-300 bg-gray-50">
+            <Badge key={tag} variant="outline" className="text-xs text-gray-600 border-gray-300 bg-gray-50 hover:bg-gray-100 transition-colors">
               {tag}
             </Badge>
           ))}
