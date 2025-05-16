@@ -1,15 +1,15 @@
-
 import { Link } from "react-router-dom";
 import { FileText, Github, Linkedin, BookOpen, Image, Layers } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { projectsData } from "@/data/ProjectsData";
+import projects from "@/data/ProjectsData";
+import ArtCard from "@/components/ArtCard";
 
 const Index = () => {
   // Get featured/recent projects (first 2)
-  const featuredProjects = projectsData.slice(0, 2);
+  const featuredProjects = projects.slice(0, 2);
 
   // Sample art data (typically would come from a data file)
   const featuredArt = [
@@ -180,20 +180,13 @@ const Index = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {featuredArt.map((art) => (
-                <div key={art.id} className="group relative overflow-hidden rounded-lg aspect-square">
-                  <img
-                    src={art.image}
-                    alt={art.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                    <Badge variant="outline" className="bg-black/15 text-white text-xs mb-2 w-fit">
-                      {art.technique}
-                    </Badge>
-                    <h4 className="text-white font-display">{art.title}</h4>
-                    <p className="text-white/70 text-sm">{art.year}</p>
-                  </div>
-                </div>
+                <ArtCard 
+                  key={art.id}
+                  title={art.title}
+                  image={art.image}
+                  technique={art.technique}
+                  year={art.year}
+                />
               ))}
             </div>
           </div>
